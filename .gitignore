@@ -1,4 +1,13 @@
 # Prerequisites
+
+.DS_Store
+build
+externals/*
+source/audio/simplemsp~
+source/audio/simpwave~
+help/simplemsp~.maxhelp
+help/simpwave~.maxhelp
+
 *.d
 
 # Compiled Object files
