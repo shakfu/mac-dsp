@@ -23,6 +23,19 @@ if (APPLE)
     endif()
 endif()
 
+if(CMAKE_HOST_APPLE)
+    execute_process(
+        COMMAND brew --prefix
+        OUTPUT_VARIABLE HOMEBREW_PREFIX
+        OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+    if(DEFINED HOMEBREW_PREFIX)
+        set(HAS_HOMEBREW 1)
+        message(STATUS "HAS_HOMEBREW: ${HAS_HOMEBREW}")
+        message(STATUS "HOMEBREW_PREFIX: ${HOMEBREW_PREFIX}")
+    endif()
+endif()
+
 MACRO(SUBDIRLIST result curdir)
   FILE(GLOB children RELATIVE ${curdir} ${curdir}/*)
   SET(dirlist "")
